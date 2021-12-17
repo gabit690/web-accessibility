@@ -1,15 +1,15 @@
-# **PROJECT TITLE**
+# **Accesibility**
 
 ## **Description**
 
-DESCRIPTION
+Some examples to show pages with less accessible elements.
 
 You can check the project [here][web].
 
 ## **Author**
 
-**Username:** USERNAME
+**Username:** Gabit.
 
-**Profession:** PROFESSION
+**Profession:** Autodidact software developer.
 
 [web]: ???
