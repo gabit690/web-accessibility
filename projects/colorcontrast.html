@@ -13,10 +13,43 @@
         <h1>color contrast</h1>
     </header>
     <main>
-        <p>background <input id="background-color" class="picker" type="color" value="#ffffff"></p>
-        <p>text <input id="color" class="picker" type="color" value="#000000"></p>
-        <div id="text-box">Texto</div>
-        <div id="result-box">Ready</div>
+        <section>
+            <section id="text-box">
+                <p id="description">
+                    Select a color for background and text of the box below. Its contrast will be compared.
+                </p>
+            </section>
+            <section id="control-panel">
+                <div class="button-container">
+                    <label for="background">
+                        background
+                        <input 
+                            id="background-color" 
+                            name="background" 
+                            class="picker" 
+                            type="color" 
+                            value="#ffffff"
+                        >
+                    </label>
+                </div>
+                <div class="button-container">
+                    <label for="text">
+                        text
+                        <input
+                            id="color" 
+                            name="text"
+                            class="picker" 
+                            type="color" 
+                            value="#000000">
+                    </label>
+                </div>
+            </section>
+        </section>
+        <aside>
+            <figure>
+                <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fmedia.istockphoto.com%2Fvectors%2Fuser-sign-icon-person-symbol-human-avatar-vector-id639085642%3Fk%3D6%26m%3D639085642%26s%3D170667a%26w%3D0%26h%3DXq5G_D9UILnAc9u7Ha1NoeQpNPkW3SIk0st25O_KUnU%3D&f=1&nofb=1" alt="Initial image">
+            </figure>
+        </aside>
     </main>
     <footer>
 

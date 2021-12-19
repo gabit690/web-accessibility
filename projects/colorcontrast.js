@@ -38,7 +38,7 @@ const contrastQuality = (ratio = 1) => {
 };
 
 const qualifyBoxContrast = (quality) => {
-    document.getElementById("result-box").innerText = quality;
+    
 };
 
 window.addEventListener("DOMContentLoaded", () => {
