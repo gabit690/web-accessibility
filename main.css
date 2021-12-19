@@ -25,4 +25,9 @@ footer {
 #copyright {
     padding: 10px 10px;
     text-transform: capitalize;
+    opacity: 0.5;
+}
+
+#copyright:hover {
+    opacity: 1;
 }
