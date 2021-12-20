@@ -25,21 +25,55 @@ const contrastRatio = (rgb1, rgb2) => {
 };
 
 const contrastQuality = (ratio = 1) => {
-    if (ratio >= 1 && ratio < 4)
+    if (ratio >= 1 && ratio < 2)
         return "awful";
-    else if  (ratio >= 4 && ratio < 8)
+    else if  (ratio >= 2 && ratio < 4)
         return "poor";
-    else if  (ratio >= 8 && ratio < 12)
+    else if  (ratio >= 4 && ratio < 9)
         return "minimum";
-    else if  (ratio >= 12 && ratio < 17)
+    else if  (ratio >= 9 && ratio < 17)
         return "good";
     else if  (ratio >= 17 && ratio < 22)
         return "excellent";
 };
 
-const qualifyBoxContrast = (quality) => {
-    
+const changeImageReaction = (sourceImage, alternativeText) => {
+    let image = document.getElementById("reaction-contrast");
+    image.setAttribute("src", sourceImage);
+    image.setAttribute("alt", alternativeText);
 };
+
+const changeAudioReaction = (sourceAudio) => {
+    let audio = document.getElementById("track");
+    if (!audio) {
+        audio = document.createElement("audio");
+        audio.setAttribute("src", sourceAudio);
+        audio.setAttribute("id", "track");
+        audio.addEventListener("ended", () => {
+            document.body.removeChild(document.getElementById("track"));
+        });
+        document.body.appendChild(audio);
+    } else if (audio.getAttribute("src") != sourceAudio) {
+        audio.setAttribute("src", sourceAudio);
+    }
+    audio.play();
+};
+
+const qualifyBoxContrast = (quality) => {
+    fetch("./typeOfContrast.json")
+        .then(response => response.json())
+        .then(data => {
+            document.getElementById("description").innerText = data[quality].description;
+            changeImageReaction(data[quality].img, data[quality].alt);
+            changeAudioReaction(data[quality].audio);
+        });
+};
+
+const handleChangeOfPicker = (name, hexColor) => {
+    let elementModified = (name == "background") ? "text-box" : "description";
+    let styleModified = (name == "background") ? "background-color" : "color";
+    document.getElementById(elementModified).style[styleModified] = hexColor;
+} 
 
 window.addEventListener("DOMContentLoaded", () => {
     const colorPickers = document.getElementsByClassName("picker");
@@ -47,7 +81,7 @@ window.addEventListener("DOMContentLoaded", () => {
         picker.addEventListener("change", (event) => {
             let hexColor = event.target.value;
             picker.setAttribute("value", hexColor);
-            document.getElementById("text-box").style[event.target.id] = hexColor;
+            handleChangeOfPicker(event.target.name, hexColor)
             let backgroundColor = hexToRgb(colorPickers[0].value);
             let textColor = hexToRgb(colorPickers[1].value);
             let quality = contrastQuality(contrastRatio(backgroundColor, textColor));

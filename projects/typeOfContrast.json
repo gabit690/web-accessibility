@@ -1,0 +1,32 @@
+{
+    "awful": {
+        "description": "You don't need an ophthalmologist.",
+        "img": "./img/mr_incredible_skull.jpg",
+        "alt": "Superhero mr. incredible skull screaming",
+        "audio": "./audio/contrast_awful.mp3"
+    },
+    "poor":  {
+        "description": "Your eyes shouldn't make so much effort.",
+        "img": "./img/mr_incredible_troll.jpg",
+        "alt": "Superhero mr. incredible disturbed troll face",
+        "audio": "./audio/contrast_poor.mp3"
+    },
+    "minimum":  {
+        "description": "Neither good nor bad, acceptable.",
+        "img": "./img/mr_incredible_disturbed.jpg",
+        "alt": "Superhero mr. incredible disturbed",
+        "audio": "./audio/contrast_minimum.mp3"
+    },
+    "good":  {
+        "description": "Higher contrast improves readability",
+        "img": "./img/mr_incredible_realistic.jpg",
+        "alt": "Superhero mr. incredible realistic version difuminated",
+        "audio": "./audio/contrast_good.mp3"
+    },
+    "excellent":  {
+        "description": "Most people should be able to read this text.",
+        "img": "./img/mr_incredible_smiling.jpg",
+        "alt": "Superhero mr. incredible smiling",
+        "audio": "./audio/contrast_excellent.mp3"
+    }
+}
