@@ -10,16 +10,16 @@
 </head>
 <body>
     <header>
-        <h1>color contrast</h1>
+        <h1 tabindex="0">color contrast</h1>
     </header>
     <main>
         <section>
-            <section id="text-box">
+            <section id="text-box" tabindex="0">
                 <p id="description">
                     Select a color for background and text of the box below. Its contrast will be compared.
                 </p>
             </section>
-            <section id="control-panel">
+            <section id="control-panel" tabindex="0">
                 <div class="button-container">
                     <label for="input-background-color">
                         background
@@ -45,12 +45,13 @@
                 </div>
             </section>
         </section>
-        <aside>
+        <aside tabindex="0">
             <figure>
                 <img 
                     id="reaction-contrast"
                     src="./img/mr_incredible_sunglasses.jpg"
-                    alt="Superhero mr. incredible wearing sunglasses"
+                    alt="Superhero mister incredible wearing sunglasses"
+                    tabindex="0"
                 >
             </figure>
         </aside>
